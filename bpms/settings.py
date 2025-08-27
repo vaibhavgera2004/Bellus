@@ -14,11 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 's)y^7u1qrnbm-!-ei*0+q&teg-^(pu(2s$y=uru28i$7+#*v9)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# >>> CHANGE 1: Set DEBUG to False for production deployment.
 DEBUG = False
 
-# >>> CHANGE 2: Configure ALLOWED_HOSTS for your Render URL.
-# Replace the wildcard with your actual Render domain for better security.
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
@@ -35,7 +32,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # >>> CHANGE 3: Add WhiteNoise middleware for serving static files in production.
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -89,11 +85,10 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# >>> CHANGE 4: WhiteNoise will automatically handle the STATIC_URL.
-# We also set STATIC_ROOT to the location where static files will be collected.
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (uploads, services, etc.)
 MEDIA_URL = '/services/'
