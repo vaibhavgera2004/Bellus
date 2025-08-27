@@ -1,0 +1,21 @@
+@font-face{
+    font-family: heading;
+    src: url('/static/core/Fonts/Montserrat-Regular.ttf');
+}
+
+@font-face{
+    font-family: para;
+    src: url('/static/core/fonts/Poppins-Regular.ttf');
+}
+
+body {
+ 	background: #f1f4f7; 
+}
+h1{
+	font-weight: 300;
+	font-size: 40px;
+	font-family: heading;
+}
+tr, th, td{
+	font-family: para;
+}

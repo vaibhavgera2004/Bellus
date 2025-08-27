@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %} Services {% endblock title %}</title>
+
+
+	<link rel="stylesheet" href="{% static "core/bootstrap/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "core/css/services.css" %}">
+
+</head>
+<body>
+
+{% include "core/navbar.html" %}
+
+{% block content %}
+
+	<div class="header">
+		<div class="top-text text-center">
+			<h4>Experienced hair stylists</h4>
+			<h1>Enjoy Professinal Beauty Services!</h1>
+			<p>Providing expert skin care advice & beauty services <br> using natural products to cater for any skin.</p>
+			<button class="btn">
+				<a href="{% url 'bookappointment' %}"> Book Appointment </a>
+			</button>	
+		</div>	
+	</div>
+
+
+	<div class="container mt-5 mb-5">
+		<div class="mx-2">
+			{% for service in services %}
+				<div class="details card-body">
+    <h2 class="card-title"> {{service.name}} </h2>
+    <div class="card-text price"> ₹{{service.price}} </div>
+    <a href="{% url 'bookappointment' %}" class="btn btn-primary btn-sm">Book Appointment</a>
+
+    <form method="POST" action="{% url 'delete_service' service.id %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm mt-2"
+                onclick="return confirm('Are you sure you want to delete this service?')">
+            Delete
+        </button>
+    </form>
+</div>
+
+			{% endfor %}
+			<div class="clearfix"></div>
+		</div>  
+	</div>
+
+
+{% endblock content %}
+
+{% include "core/footer.html" %}
+
+</body>
+</html>

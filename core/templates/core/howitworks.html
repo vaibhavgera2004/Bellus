@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block custom_css %}
+	<link rel="stylesheet" href="{% static 'core/css/howitworks.css' %}">
+{% endblock custom_css %}
+
+{% block content %}
+
+    <section class="container services">
+    	<h1 class="text-center"> How It Works!! </h1>
+    	<p class="text-center"> Lorem ipsum dolor sit amet consectetur. </p>
+
+    	<div class="row rowsetting mt-5">
+    		<div class="col-lg-3 col-md-4 col-sm-4 col-10 d-block m-auto text-center">
+    			<a href="#"><i class="fa fa-user-circle fa-3x mb-2" aria-hidden="true"></i></a>
+    			<h2> Login Or SignUp </h2>
+    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+    		</div>
+    		<div class="col-lg-3 col-md-4 col-sm-4 col-10 d-block m-auto text-center">
+    			<a href="#"><i class="fa fa-briefcase fa-3x mb-2" aria-hidden="true"></i></a>
+    			<h2> Choose Service </h2>
+    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			</p>
+    		</div>
+    		<div class="col-lg-3 col-md-4 col-sm-4 col-10 d-block m-auto text-center">
+    			<a href="#"><i class="fa fa-calendar fa-3x mb-2" aria-hidden="true"></i></a>
+    			<h2> Book Appointment </h2>
+    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			</p>
+    		</div>
+    		<div class="col-lg-3 col-md-4 col-sm-4 col-10 d-block m-auto text-center">
+    			<a href="#"><i class="fa fa-street-view fa-3x mb-2" aria-hidden="true"></i></a>
+    			<h2> Visit Shop </h2>
+    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			</p>
+    		</div>
+    	</div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> About Us </title>
+
+	<link rel="stylesheet" href="{% static 'core/css/style/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/about.css' %}">
+</head>
+<body>
+
+	{% block content %}
+
+	<section class="about mt-5">
+		<div class="container">
+			<div class="row">
+				
+				
+				<div class="col-lg-8 mx-auto text-box">
+					<h5>About Us</h5>
+						<p>At <strong>BellusPro</strong>, beauty is a form of self-expression, and self-care is essential for confidence and well-being. Our salon offers a full range of professional grooming and beauty services tailored to diverse preferences. Whether you’re looking for a fresh haircut, a skin-nourishing treatment, or a relaxing session to unwind, our skilled professionals ensure a luxurious experience with high-quality results.</p>
+
+						<h5>Hairdressing & Styling</h5>
+						<p>Your hairstyle reflects your personality, and we specialize in cuts, styling, and treatments that enhance individuality. From sleek, polished looks to voluminous waves or bold transformations, our expert stylists craft the perfect style for you. We offer deep conditioning, keratin smoothing, and scalp treatments for healthy, vibrant hair.</p>
+
+						<p>Our color services include natural highlights, balayage, and vibrant shades, using premium products for long-lasting, flawless results. Whether you prefer subtle enhancements or striking color changes, our team works to bring your vision to life.</p>
+
+						<h5>Eyebrow & Eyelash Care</h5>
+						<p>Defined brows and lashes accentuate facial features. We provide eyebrow shaping, threading, tinting, and microblading for perfectly sculpted brows. Our eyelash services include lifts, tints, and extensions, customized to create a natural or bold look that enhances your eyes.</p>
+
+						<h5>Makeup & Skincare Treatments</h5>
+						<p>Our professional makeup artists create flawless looks for any occasion, from natural elegance to bold glam. Using high-quality products and techniques, we ensure long-lasting results. We also offer skincare treatments, including hydrating facials, deep cleansing, and brightening therapies to promote a healthy, glowing complexion.</p>
+
+						<h5>Nail Care & Spa Services</h5>
+						<p>We provide expert manicures and pedicures, from classic nail care to creative designs. Our spa services include relaxing hand and foot treatments with exfoliation, hydration, and massage for smooth, well-groomed skin.</p>
+
+						<h5>Wellness & Relaxation</h5>
+						<p>Self-care extends beyond appearance. Our massage therapies, aromatherapy treatments, and body scrubs help relieve stress and promote relaxation. We ensure a serene escape tailored to your needs.</p>
+
+						<h5>A Commitment to Quality</h5>
+						<p>At <strong>BellusPro</strong>, we prioritize comfort, hygiene, and inclusivity. Our expert professionals use premium products and stay updated with the latest trends and techniques. Whether you’re visiting for a quick touch-up or a complete transformation, we guarantee an experience that leaves you feeling refreshed and confident.</p>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+		
+	{% endblock content %}
+	
+</body>
+</html>

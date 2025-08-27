@@ -1,0 +1,51 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Appointments</title>
+
+	<link rel="stylesheet" href="{% static 'core/css/style/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static "core/css/appointments.css" %}">
+</head>
+<body>
+	
+	<div class="container">
+		<h1 class="my-5">My Appointments</h1>
+
+	<table class="table mb-5">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">ID</th>
+	      <th scope="col">Full Name</th>
+	      <th scope="col">Phone Number</th>
+	      <th scope="col">Email</th>
+	      <th scope="col">Service Name</th>
+	      <th scope="col">Date</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	{% for appointment in appointments %}
+	    <tr>
+	      <th scope="row">{{ forloop.counter }}</th>
+	      <td>{{ appointment.your_name }}</td>
+	      <td>{{ appointment.your_phone }}</td>
+	      <td>{{ appointment.your_email }}</td>
+	      <td>{{ appointment.your_service.name }}</td>
+	      <td>{{ appointment.your_date }}</td>
+	    </tr>
+	   	{% endfor %}
+	  </tbody>
+	</table>
+	</div>
+
+</body>
+</html>
+
+{% endblock content %}

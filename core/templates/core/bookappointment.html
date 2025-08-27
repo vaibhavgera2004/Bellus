@@ -1,0 +1,121 @@
+{% load static %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% comment %}
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% endcomment %}
+    
+    <link rel="stylesheet" href="{% static 'core/css/style/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style/datepicker3.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bookappointment.css' %}">
+    
+  </head>
+  <body>
+   
+  {% include "core/navbar.html" %} 
+
+    <section>
+      <div class="inner-layer">
+          <div class="container">
+            <div class="row no-margin">
+                <div class="col-sm-7">
+                    <div class="content">
+                        <h1 class="text-uppercase">Book You Slot Now and Save your time</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis at lacus at rhoncus. Integer pharetra lacus vitae sapien blandit eleifend. </p>
+                        <h5>For Any Question : +91 31628 59445</h5>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <form action="{% url 'bookappointment' %}" method="POST">
+                      {% csrf_token %}
+                      <div class="form-data">
+                          <div class="form-head">
+                              <h2>Book Appointemnt</h2>
+                          </div>
+                          <div class="form-body">
+                              <div class="row form-row">
+                                <input type="text" name="your-name" placeholder="Enter Full name" class="form-control">
+                              </div>
+                              <div class="row form-row">
+                                <input type="text" name="your-phone" placeholder="Enter Mobile Number" class="form-control">
+                              </div>
+                              <div class="row form-row">
+                                <input type="text" name="your-email" placeholder="Enter Email Adreess" class="form-control">
+                              </div>
+                              <div class="row form-row">
+                                <select class="form-select form-control" name="your-service" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                  <option selected>Choose Service...</option>
+                                  {% for service in services %}
+                                  <option value="{{ service.id }}">{{ service.name }}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                              <div class="row form-row">
+                                <input id="showdate" name="your-date" type="text" placeholder="Appointment Date" class="form-control">
+                              </div>
+                               <div class="row form-row">
+                                 <button class="btn btn-success btn-appointment">
+                                   Book Appointment
+                                 </button> 
+                              </div>
+
+                          </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+      </div>
+      
+    </section>
+
+    <!-- <h6>Address Details</h6>
+
+                             <div class="row form-row">
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Enter Area" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Enter City" class="form-control">
+                                </div>
+                            </div>
+                             <div class="row form-row">
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Enter State" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Postal Code" class="form-control">
+                                </div>
+                            </div> -->
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap-datepicker.js' %}"></script>
+
+    {% comment %}
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    Kanti Rajbhar
+    7045533519
+    kanti@gmail.com
+    {% endcomment %}
+
+     <script>
+      $(document).ready(function(){
+          $("#showdate").datepicker({format: 'yyyy-mm-dd'});
+      });
+    </script>
+    
+  </body>
+</html>

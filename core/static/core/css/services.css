@@ -1,0 +1,131 @@
+@font-face{
+    font-family: manisha;
+    src: url('/static/core/Fonts/Montserrat-Regular.ttf');
+}
+@font-face{
+    font-family: headingfont;
+    src: url('/static/core/Fonts/KaushanScript-Regular.ttf');
+}
+
+.header{
+  background-image: url("/static/core/images/ServiceHeader.jpg");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.top-text{
+  color: #FFF;
+  padding: 30px;
+}
+.top-text h4{
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: manisha;
+}
+.top-text h1{
+  font-weight: 600;
+  font-size: 4rem;
+  font-family: headingfont;
+}
+.top-text p{
+  font-size: 25px;
+  margin-top: 20px;
+  font-family: manisha;
+}
+
+.btn{
+  width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  letter-spacing: 1px;
+}
+.btn a{
+  text-decoration: none;
+  color: #000000;
+}
+.btn a:hover{
+  border-color: #fff;
+  background: transparent;
+  color: #000000;
+  text-decoration: none;
+}
+.product
+{
+    margin-top: 100px;
+    width: 240px;
+    height: 340px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    border-radius: 5px;
+    overflow: hidden;
+    float: left;
+    margin: 1%;
+}
+.product .imgBox
+{
+    height: 100%;
+    box-sizing: border-box;
+}
+.product .imgBox img
+{
+    display: block;
+    width: 90%;
+    margin: 20px auto 0;
+}
+.details
+{
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: .5s;
+}
+.product:hover .details
+{
+    bottom: 0;
+    box-shadow: 0 -5px 15px rgba(0,0,0,.25);
+}
+.details h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    width: 100%;    
+}
+/*.details h2 span
+{
+    font-size: 12px;
+    color: #ccc;
+    font-weight: normal;
+}*/
+.details .price
+{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    color: #ff4faf;
+    font-size: 20px;    
+}
+.btn-text
+{
+    display: block;
+    padding: 5px;
+    color: #fff;
+    margin: 20px 0 0;
+    background: #ff4faf;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    cursor: pointer;
+}
+.btn-text:hover
+{
+    background: #ff209a;
+    text-decoration-line: none;
+    color: #fff; 
+}
