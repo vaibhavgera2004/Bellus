@@ -18,11 +18,10 @@ SECRET_KEY = 's)y^7u1qrnbm-!-ei*0+q&teg-^(pu(2s$y=uru28i$7+#*v9)'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "belluspro.onrender.com",  # your Render app
+    "belluspro.onrender.com",  # Render app
     "localhost",
     "127.0.0.1",
 ]
-
 
 
 # Application definition
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ For static files on Render
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,7 +68,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bpms.wsgi.application'
 
 
-# Database
+# Database (default: SQLite, Render will override if Postgres is set)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -98,6 +98,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# ✅ Whitenoise storage backend for Render
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media files (uploads, services, etc.)
 MEDIA_URL = '/services/'
