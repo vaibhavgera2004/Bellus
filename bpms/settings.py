@@ -17,7 +17,7 @@ SECRET_KEY = 's)y^7u1qrnbm-!-ei*0+q&teg-^(pu(2s$y=uru28i$7+#*v9)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bellus-plaz.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
