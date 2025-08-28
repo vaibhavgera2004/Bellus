@@ -91,10 +91,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # >>> CHANGE 4: WhiteNoise will automatically handle the STATIC_URL.
 # We also set STATIC_ROOT to the location where static files will be collected.
-MEDIA_URL = '/uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
 
 # Media files (uploads, services, etc.)
 MEDIA_URL = '/services/'
